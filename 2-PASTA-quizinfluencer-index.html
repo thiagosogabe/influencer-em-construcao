@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Influencer em Construção — Descubra Seu Caminho</title>
+
+<!-- ===== META PIXEL — cole o código oficial do Gerenciador de Eventos aqui, substituindo SEU_PIXEL_ID ===== -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<!-- ===== FIM DO BLOCO DO PIXEL ===== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#FFEDF3;
+    --pink:#FF2E88;
+    --pink-dark:#E0186B;
+    --pink-light:#FFE0EC;
+    --pink-baby:#FFF3F8;
+    --peach:#FF9A5A;
+    --peach-soft:#FFE3CE;
+    --berry:#C4105A;
+    --green:#3DDC84;
+    --green-dark:#22B268;
+    --white:#FFFFFF;
+    --ink:#5C2340;
+    --ink-soft:#9C6B85;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    background: var(--blush);
+    color: var(--ink);
+    font-family:'Quicksand', sans-serif;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding: 30px 14px;
+    position:relative;
+    overflow-x:hidden;
+  }
+  .display{ font-family:'Fredoka', sans-serif; }
+
+  /* decoracoes flutuantes no fundo */
+  .deco{ position:fixed; font-size:26px; opacity:0.55; pointer-events:none; user-select:none; }
+  .deco.d1{ top:8%; left:8%; }
+  .deco.d2{ top:14%; right:10%; font-size:20px; }
+  .deco.d3{ bottom:12%; left:6%; font-size:22px; }
+  .deco.d4{ bottom:20%; right:7%; }
+  .deco.d5{ top:45%; left:3%; font-size:18px; }
+  .deco.d6{ top:38%; right:4%; font-size:18px; }
+
+  /* ===== MOLDURA DE CELULAR ===== */
+  .phone{
+    width: 100%; max-width: 400px;
+    background: var(--white);
+    border-radius: 36px;
+    border: 3px solid var(--white);
+    box-shadow: 0 24px 60px rgba(255,61,130,0.22), 0 0 0 3px var(--peach-soft);
+    overflow:hidden;
+    position:relative;
+    min-height: 700px;
+    display:flex; flex-direction:column;
+    z-index:1;
+  }
+  .notch{
+    width: 90px; height: 22px; background: var(--blush);
+    border-radius: 0 0 16px 16px; margin: 0 auto; flex-shrink:0;
+  }
+
+  /* barra de progresso */
+  .story-bar{ display:flex; gap:5px; padding: 16px 16px 0; flex-shrink:0; }
+  .story-bar .seg{ flex:1; height:6px; background: var(--peach-soft); border-radius:6px; overflow:hidden; }
+  .story-bar .seg .fill{ height:100%; width:0%; background: linear-gradient(90deg, var(--pink), var(--peach)); transition: width 0.35s ease; border-radius:6px; }
+  .story-bar.hidden{ opacity:0; pointer-events:none; }
+
+  .screen{
+    flex:1; display:none; flex-direction:column; justify-content:center;
+    padding: 30px 26px 36px; text-align:center;
+    animation: fadein 0.4s ease;
+  }
+  .screen.active{ display:flex; }
+  @keyframes fadein{ from{ opacity:0; transform:translateY(8px);} to{ opacity:1; transform:translateY(0);} }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    background: var(--peach-soft); color: var(--pink-dark);
+    font-family:'Quicksand',sans-serif; font-weight:800; font-size:0.72rem;
+    letter-spacing:0.03em; text-transform:uppercase;
+    padding: 7px 16px; border-radius:20px; margin: 0 auto 18px;
+  }
+
+  /* HOOK / IDENTIFICACAO */
+  .hero-emoji{ font-size:52px; margin-bottom:8px; }
+  .hook-title{ font-size: 2.15rem; line-height:1.14; font-weight:600; margin-bottom:28px; color:var(--berry); }
+  .hook-title .accent{ color: var(--pink); }
+  .hook-sub{ font-size:0.95rem; color: var(--ink-soft); line-height:1.6; margin-bottom: 26px; font-weight:600; }
+  .hook-intro{ font-size:0.92rem; color: var(--ink); line-height:1.65; margin-bottom: 16px; font-weight:600; text-align:center; }
+  .hook-intro-sm{ font-size:0.8rem; color:#1A1A1A; line-height:1.55; margin-bottom: 26px; font-weight:600; text-align:center; }
+  .hook-checks{ text-align:left; margin: 0 auto 30px; max-width:290px; }
+  .hook-checks div{
+    display:flex; gap:10px; font-size:0.87rem; color:var(--ink); margin-bottom:10px;
+    align-items:flex-start; background:var(--blush); padding:10px 14px; border-radius:14px; font-weight:600;
+  }
+  .hook-checks span.ic{ color: var(--pink); font-weight:800; flex-shrink:0; }
+
+  /* PERGUNTAS */
+  .q-num{ font-family:'Fredoka',sans-serif; font-size:0.75rem; color:var(--pink); margin-bottom:10px; font-weight:600; letter-spacing:0.02em; }
+  .q-title{ font-size:1.4rem; font-weight:600; line-height:1.28; margin-bottom: 24px; color:var(--berry); font-family:'Fredoka',sans-serif; }
+  .opts{ display:flex; flex-direction:column; gap:11px; }
+  .opt{
+    background: var(--white); color: var(--ink);
+    border: 2px solid var(--peach-soft); border-radius:16px; padding: 16px 18px;
+    font-family:'Quicksand',sans-serif; font-weight:700; font-size:0.94rem;
+    text-align:left; cursor:pointer; transition: all 0.15s ease;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .opt:hover{ transform: scale(0.98); background: var(--blush); border-color: var(--pink); }
+  .opt .arrow{ color: var(--pink); font-weight:800; font-size:1.1rem; }
+
+  /* LOADING */
+  .loading-ring{
+    width:64px; height:64px; border-radius:50%;
+    border: 5px solid var(--peach-soft); border-top-color: var(--pink);
+    margin: 0 auto 26px; animation: spin 0.85s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  .loading-text{ font-size:1.05rem; font-weight:700; margin-bottom:8px; color:var(--berry); font-family:'Fredoka',sans-serif; }
+  .loading-sub{ font-size:0.82rem; color:var(--ink-soft); font-weight:600; }
+
+  /* RESULTADO */
+  .result-badge{
+    width:76px; height:76px; border-radius:50%;
+    background: linear-gradient(160deg, var(--pink), var(--peach));
+    display:flex; align-items:center; justify-content:center;
+    font-size:34px; margin: 0 auto 20px;
+    box-shadow: 0 10px 24px rgba(255,61,130,0.35);
+  }
+  .result-title{ font-size:1.55rem; font-weight:600; line-height:1.24; margin-bottom:14px; color:var(--berry); font-family:'Fredoka',sans-serif; }
+  .result-title .accent{ color: var(--pink); }
+  .result-text{ font-size:0.9rem; color: var(--ink); line-height:1.7; margin-bottom:26px; text-align:center; font-weight:600; }
+  .result-text b{ color: var(--pink-dark); }
+
+  .types-block{ background: var(--blush); border-radius:16px; padding:20px 20px; margin-bottom:22px; text-align:left; }
+  .types-label{ font-size:0.85rem; color:var(--ink); font-weight:700; margin-bottom:12px; text-align:center; }
+  .types-list{ list-style:none; margin-bottom:14px; }
+  .types-list li{
+    font-size:0.83rem; color: var(--ink-soft); font-weight:600; padding: 7px 0 7px 24px;
+    position:relative; border-bottom: 1px dashed var(--peach-soft);
+  }
+  .types-list li:last-child{ border-bottom:none; }
+  .types-list li::before{ content:"○"; position:absolute; left:0; top:7px; color: var(--ink-soft); font-size:0.7rem; }
+  .types-highlight{
+    font-size:0.87rem; color: var(--berry); font-weight:700; line-height:1.6;
+    background:white; border-radius:12px; padding:14px 16px; text-align:center;
+    border: 2px solid var(--pink);
+  }
+  .types-highlight b{ color: var(--pink-dark); }
+  .cta-btn{
+    display:block; width:100%; background: var(--pink); color: white;
+    border:none; border-radius:18px; padding:18px; font-family:'Fredoka',sans-serif;
+    font-weight:600; font-size:1rem; cursor:pointer; text-decoration:none;
+    box-shadow: 0 6px 0 var(--pink-dark);
+    transition: transform 0.1s ease;
+  }
+  .cta-btn:hover{ transform: translateY(1px); }
+  .cta-btn.cta-final{
+    background: var(--green); box-shadow: 0 6px 0 var(--green-dark);
+    position:relative; overflow:hidden;
+  }
+  .cta-btn.cta-final::after{
+    content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg); animation: shine-sweep 3.2s ease-in-out infinite;
+  }
+  @keyframes shine-sweep{
+    0%{ left:-60%; } 35%{ left:130%; } 100%{ left:130%; }
+  }
+  .cta-note{ font-size:0.74rem; color:var(--ink-soft); margin-top:14px; font-weight:600; }
+
+  @media (max-width:400px){
+    .phone{ min-height: 660px; border-radius:28px; }
+    .hook-title{ font-size:1.85rem; }
+    .deco{ display:none; }
+  }
+
+  /* POP-UP MOTIVACIONAL */
+  .motivation-popup{
+    position:absolute; inset:0; background: linear-gradient(160deg, var(--pink), #FF6FA0);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity 0.25s ease;
+    z-index:10; border-radius:34px; padding:50px;
+  }
+  .motivation-popup.show{ opacity:1; pointer-events:all; }
+  .motivation-card{ text-align:center; }
+  .motivation-emoji{ font-size:46px; display:block; margin-bottom:18px; animation: bounce-emoji 0.9s ease-in-out infinite; }
+  @keyframes bounce-emoji{ 0%,100%{ transform: translateY(0) scale(1); } 50%{ transform: translateY(-10px) scale(1.12); } }
+  .motivation-card p{ color:white; font-family:'Fredoka',sans-serif; font-weight:600; font-size:1.25rem; line-height:1.45; }
+</style>
+</head>
+<body>
+
+<span class="deco d1">✨</span>
+<span class="deco d2">💖</span>
+<span class="deco d3">⭐</span>
+<span class="deco d4">✨</span>
+<span class="deco d5">💫</span>
+<span class="deco d6">🌸</span>
+
+<div class="phone">
+  <div class="notch"></div>
+  <div class="story-bar" id="storyBar"></div>
+
+  <!-- POP-UP MOTIVACIONAL -->
+  <div class="motivation-popup" id="motivationPopup">
+    <div class="motivation-card">
+      <span class="motivation-emoji" id="motivationEmoji">✨</span>
+      <p id="motivationText"></p>
+    </div>
+  </div>
+
+  <!-- TELA 0: IDENTIFICACAO -->
+  <div class="screen active" data-screen="hook">
+    <h1 class="hook-title display">Influencer em <span class="accent">Construção</span></h1>
+    <p class="hook-intro">Se você sente medo do que vão falar ou vergonha de aparecer, saiba que isso é mais comum do que parece — e não precisa te travar.</p>
+    <p class="hook-intro-sm">Responda esse quiz rápido, de menos de 1 minuto, e descubra seu ponto de partida.</p>
+    <button class="cta-btn" onclick="nextScreen()">Começar o quiz →</button>
+  </div>
+
+  <!-- PERGUNTAS (geradas via JS) -->
+  <div class="screen" data-screen="q"></div>
+
+  <!-- LOADING -->
+  <div class="screen" data-screen="loading">
+    <div class="loading-ring"></div>
+    <p class="loading-text" id="loadingText">Analisando suas respostas...</p>
+    <p class="loading-sub">Isso leva só alguns segundos 💕</p>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="screen" data-screen="result">
+    <div class="result-badge">🚀</div>
+    <h1 class="result-title">Seu potencial é real — e maior do que você imagina.</h1>
+
+    <div class="types-block">
+      <p class="types-label">Toda mulher que pensa em começar se encaixa em um desses grupos:</p>
+      <ul class="types-list">
+        <li>A que tem medo e nunca chega a tentar</li>
+        <li>A que trava com medo do julgamento dos outros</li>
+        <li>A que é tímida demais pra se expor</li>
+        <li>A que sente vergonha antes mesmo de postar o primeiro vídeo</li>
+      </ul>
+      <p class="types-highlight">E existe um último grupo, bem menor — mas é o único que realmente muda de vida: <b>a mulher que decide esquecer os problemas por um instante e arrisca, mesmo com medo.</b></p>
+    </div>
+
+    <p class="result-text">Pelo que você respondeu, o que te falta não é talento, nem sorte, nem "começar mais nova". <b>É um caminho claro pra seguir.</b><br><br>
+    A boa notícia: isso se aprende com método — o mesmo passo a passo que já ajudou outras mulheres a sair da trava, publicar com consistência e buscar as primeiras parcerias pagas, começando só com o celular que já têm.</p>
+    <a href="https://fitcreator.com/influencer" class="cta-btn cta-final" id="ctaFinal" onclick="if(typeof fbq!=='undefined'){fbq('trackCustom','Avancou_Landpage');}">Quero começar agora! →</a>
+    <p class="cta-note">Acesso imediato · funciona no celular 📱</p>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    title: "Qual sua idade?",
+    opts: ["18 a 20 anos", "21 a 25 anos", "26 a 39 anos", "40 a 50 anos"]
+  },
+  {
+    title: "Qual nicho mais combina com você?",
+    opts: ["Moda e beleza", "Maternidade e família", "Fitness e bem-estar", "Casa e organização", "Outro"]
+  },
+  {
+    title: "O que você faria se conseguisse fechar parcerias todos os meses?",
+    opts: ["Ajudaria minha família financeiramente", "Largaria o CLT de vez", "Viveria 100% disso", "Realizaria um sonho antigo"]
+  },
+  {
+    title: "Se seu conteúdo viralizasse essa semana, o que mudaria na sua vida?",
+    opts: ["Minha autoestima ia lá pra cima", "As marcas finalmente me notariam", "Eu provaria pra mim mesma que consigo", "Meu dinheiro ia mudar de patamar"]
+  },
+  {
+    title: "O que mais dói quando você vê outra mulher crescendo nas redes e você não?",
+    opts: ["Sinto que estou perdendo tempo", "Acho que não sou boa o suficiente", "Tenho medo de nunca conseguir", "Sinto vergonha de mim mesma"]
+  },
+  {
+    title: "Se você tivesse coragem de aparecer sem medo, o que mudaria primeiro?",
+    opts: ["Eu falaria o que penso de verdade", "Pararia de me comparar com os outros", "Começaria a postar todo dia", "Deixaria de esconder meus sonhos"]
+  },
+  {
+    title: "Qual é o maior motivo pra você não ter começado ainda?",
+    opts: ["Medo do que vão pensar", "Não sei por onde começar", "Acho que já é tarde", "Não acredito que consigo viver disso"]
+  },
+  {
+    title: "Se você tivesse certeza que ia dar certo, o que faria hoje mesmo?",
+    opts: ["Gravaria meu primeiro vídeo sem medo", "Mandaria mensagem pra uma marca", "Deixaria meu emprego atual", "Contaria pra todo mundo o que estou fazendo"]
+  }
+];
+
+const MOTIVATIONAL_MESSAGES = [
+  { emoji:"💪", text:"Você está mais perto do que imagina" },
+  { emoji:"✨", text:"Toda grande criadora começou exatamente onde você está agora" },
+  { emoji:"💕", text:"Sua coragem de responder isso já é o primeiro passo" },
+  { emoji:"🚀", text:"O medo não vai embora sozinho — mas o método te leva além dele" },
+  { emoji:"🌟", text:"Continue. Sua versão de sucesso está logo ali" },
+  { emoji:"💖", text:"Cada resposta te aproxima do seu ponto de virada" },
+  { emoji:"✨", text:"Falta pouco — não desiste agora" },
+  { emoji:"💪", text:"Você já está fazendo mais que a maioria: agindo" }
+];
+
+const LOADING_MESSAGES = [
+  "Analisando suas respostas...",
+  "Identificando seu ponto de partida...",
+  "Montando seu caminho ideal..."
+];
+
+let current = -1;
+let quizButtonCount = 0;
+
+function trackQuizButton(){
+  quizButtonCount++;
+  if (typeof fbq !== 'undefined'){
+    fbq('trackCustom', 'Quiz_Botao_' + quizButtonCount);
+    fbq('trackCustom', 'Quiz_Avancou', { etapa: quizButtonCount });
+  }
+}
+
+const storyBar = document.getElementById('storyBar');
+QUESTIONS.forEach(() => {
+  const seg = document.createElement('div');
+  seg.className = 'seg';
+  seg.innerHTML = '<div class="fill"></div>';
+  storyBar.appendChild(seg);
+});
+storyBar.classList.add('hidden');
+
+function renderQuestion(qIndex){
+  const q = QUESTIONS[qIndex];
+  const qScreen = document.querySelector('[data-screen="q"]');
+  qScreen.innerHTML = `
+    <div class="q-num">PERGUNTA ${qIndex+1} DE ${QUESTIONS.length} 💭</div>
+    <h2 class="q-title">${q.title}</h2>
+    <div class="opts">
+      ${q.opts.map(o => `<button class="opt" onclick="answer(${qIndex})"><span>${o}</span><span class="arrow">→</span></button>`).join('')}
+    </div>
+  `;
+}
+
+function showScreen(name){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelector(`[data-screen="${name}"]`).classList.add('active');
+}
+
+function updateProgress(qIndex){
+  const segs = storyBar.querySelectorAll('.seg');
+  segs.forEach((seg, i) => {
+    seg.querySelector('.fill').style.width = (i <= qIndex) ? '100%' : '0%';
+  });
+}
+
+function showMotivation(qIndex, callback){
+  const popup = document.getElementById('motivationPopup');
+  const msg = MOTIVATIONAL_MESSAGES[qIndex % MOTIVATIONAL_MESSAGES.length];
+  document.getElementById('motivationEmoji').textContent = msg.emoji;
+  document.getElementById('motivationText').textContent = msg.text;
+  popup.classList.add('show');
+  setTimeout(() => {
+    popup.classList.remove('show');
+    setTimeout(callback, 200);
+  }, 2300);
+}
+
+function answer(qIndex){
+  trackQuizButton();
+  showMotivation(qIndex, function(){
+    if (qIndex < QUESTIONS.length - 1){
+      current = qIndex + 1;
+      updateProgress(current);
+      renderQuestion(current);
+    } else {
+      updateProgress(qIndex);
+      showLoading();
+    }
+  });
+}
+
+function nextScreen(){
+  trackQuizButton();
+  storyBar.classList.remove('hidden');
+  current = 0;
+  updateProgress(-1);
+  renderQuestion(0);
+  showScreen('q');
+}
+
+function showLoading(){
+  storyBar.classList.add('hidden');
+  showScreen('loading');
+  let i = 0;
+  const txt = document.getElementById('loadingText');
+  const interval = setInterval(() => {
+    i++;
+    if (i < LOADING_MESSAGES.length){ txt.textContent = LOADING_MESSAGES[i]; }
+  }, 700);
+  setTimeout(() => {
+    clearInterval(interval);
+    showScreen('result');
+  }, 2400);
+}
+</script>
+
+<!-- ===== REPASSE DE UTM/FBCLID PARA O LINK FINAL ===== -->
+<script>
+(function(){
+  var currentParams = new URLSearchParams(window.location.search);
+  if ([...currentParams].length === 0) return;
+  var link = document.getElementById('ctaFinal');
+  if (!link) return;
+  try {
+    var url = new URL(link.href, window.location.href);
+    currentParams.forEach(function(value, key){ url.searchParams.set(key, value); });
+    link.href = url.toString();
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>
