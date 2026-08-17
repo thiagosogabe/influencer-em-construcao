@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Influencer em Construção — Descubra Seu Caminho</title>
 
-<!-- ===== META PIXEL — cole o código oficial do Gerenciador de Eventos aqui, substituindo SEU_PIXEL_ID ===== -->
+<!-- ===== META PIXEL — cole o código oficial do Gerenciador de Eventos aqui, substituindo 1617001726798310 ===== -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -15,7 +15,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'SEU_PIXEL_ID');
+fbq('init', '1617001726798310');
 fbq('track', 'PageView');
 </script>
 <!-- ===== FIM DO BLOCO DO PIXEL ===== -->
@@ -39,13 +39,13 @@ fbq('track', 'PageView');
     --ink-soft:#9C6B85;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
-  html,body{ height:100%; }
+  html,body{ min-height:100%; }
   body{
     background: var(--blush);
     color: var(--ink);
     font-family:'Quicksand', sans-serif;
     min-height:100vh;
-    display:flex; align-items:center; justify-content:center;
+    display:flex; align-items:flex-start; justify-content:center;
     padding: 30px 14px;
     position:relative;
     overflow-x:hidden;
@@ -91,6 +91,7 @@ fbq('track', 'PageView');
     animation: fadein 0.4s ease;
   }
   .screen.active{ display:flex; }
+  [data-screen="result"]{ justify-content:flex-start !important; padding-top:34px !important; }
   @keyframes fadein{ from{ opacity:0; transform:translateY(8px);} to{ opacity:1; transform:translateY(0);} }
 
   .eyebrow{
@@ -189,6 +190,21 @@ fbq('track', 'PageView');
   }
   .cta-note{ font-size:0.74rem; color:var(--ink-soft); margin-top:14px; font-weight:600; }
 
+  .growth-chart-block{ margin: 18px 0 22px; }
+  .growth-chart-label{ font-size:0.82rem; font-weight:700; color:var(--pink-dark); margin-bottom:12px; }
+  .growth-chart{ display:flex; align-items:flex-end; justify-content:space-between; gap:10px; height:130px; background:white; border-radius:14px; padding:14px 12px 8px; }
+  .gc-bar-wrap{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .gc-bar{
+    width:100%; max-width:34px; height:calc(var(--h) * 0.8);
+    background: linear-gradient(180deg, var(--pink), var(--green));
+    border-radius:8px 8px 0 0; margin-top:auto;
+    animation: bar-grow 1s ease-out;
+  }
+  @keyframes bar-grow{ from{ height:0; } to{ height:calc(var(--h) * 0.8); } }
+  .gc-val{ font-size:0.66rem; font-weight:700; color:var(--pink-dark); margin-top:5px; }
+  .gc-month{ font-size:0.62rem; color:var(--ink-soft); font-weight:600; margin-top:1px; }
+  .growth-chart-disclaimer{ font-size:0.66rem; color:var(--ink-soft); opacity:0.85; margin-top:10px; line-height:1.4; }
+
   @media (max-width:400px){
     .phone{ min-height: 660px; border-radius:28px; }
     .hook-title{ font-size:1.85rem; }
@@ -251,21 +267,25 @@ fbq('track', 'PageView');
   <!-- RESULTADO -->
   <div class="screen" data-screen="result">
     <div class="result-badge">🚀</div>
-    <h1 class="result-title">Seu potencial é real — e maior do que você imagina.</h1>
+    <h1 class="result-title">Você não precisa de mais talento. Precisa de coragem pra começar.</h1>
 
     <div class="types-block">
-      <p class="types-label">Toda mulher que pensa em começar se encaixa em um desses grupos:</p>
-      <ul class="types-list">
-        <li>A que tem medo e nunca chega a tentar</li>
-        <li>A que trava com medo do julgamento dos outros</li>
-        <li>A que é tímida demais pra se expor</li>
-        <li>A que sente vergonha antes mesmo de postar o primeiro vídeo</li>
-      </ul>
-      <p class="types-highlight">E existe um último grupo, bem menor — mas é o único que realmente muda de vida: <b>a mulher que decide esquecer os problemas por um instante e arrisca, mesmo com medo.</b></p>
+      <p class="types-highlight">A maioria trava com medo. Poucas decidem arriscar mesmo assim — <b>e são essas que mudam de vida.</b></p>
     </div>
 
-    <p class="result-text">Pelo que você respondeu, o que te falta não é talento, nem sorte, nem "começar mais nova". <b>É um caminho claro pra seguir.</b><br><br>
-    A boa notícia: isso se aprende com método — o mesmo passo a passo que já ajudou outras mulheres a sair da trava, publicar com consistência e buscar as primeiras parcerias pagas, começando só com o celular que já têm.</p>
+    <p class="result-text">Isso se aprende com método, não com sorte. O mesmo passo a passo que já ajudou outras mulheres a sair da trava e buscar suas primeiras parcerias.</p>
+
+    <div class="growth-chart-block">
+      <p class="growth-chart-label">📈 Com dedicação e consistência, é assim que a jornada pode evoluir:</p>
+      <div class="growth-chart" id="growthChart">
+        <div class="gc-bar-wrap"><div class="gc-bar" style="--h:22%;"></div><span class="gc-val">R$0</span><span class="gc-month">Mês 1</span></div>
+        <div class="gc-bar-wrap"><div class="gc-bar" style="--h:45%;"></div><span class="gc-val">R$1,5mil</span><span class="gc-month">Mês 2</span></div>
+        <div class="gc-bar-wrap"><div class="gc-bar" style="--h:68%;"></div><span class="gc-val">R$5mil</span><span class="gc-month">Nov</span></div>
+        <div class="gc-bar-wrap"><div class="gc-bar" style="--h:100%;"></div><span class="gc-val">R$8mil</span><span class="gc-month">Dez</span></div>
+      </div>
+      <p class="growth-chart-disclaimer">*Exemplo ilustrativo do potencial de evolução. Não é garantia de resultado — depende do esforço e dedicação de cada pessoa.</p>
+    </div>
+
     <a href="https://fitcreatorai.com/influencer" class="cta-btn cta-final" id="ctaFinal" onclick="if(typeof fbq!=='undefined'){fbq('trackCustom','Avancou_Landpage');}">Quero começar agora! →</a>
     <p class="cta-note">Acesso imediato · funciona no celular 📱</p>
   </div>
